@@ -4,7 +4,7 @@ import java.awt.image.BufferedImage;
 import java.net.URL;
 
 public class Hero {
-	
+	//comment
 	BufferedImage sprite;
 	String name;
 	int locationx;
