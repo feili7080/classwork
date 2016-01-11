@@ -1,7 +1,11 @@
 package graphicTrastj;
 
+import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
+import java.io.IOException;
 import java.net.URL;
+
+import javax.imageio.ImageIO;
 
 public class Hero {
 	//comment
@@ -11,11 +15,10 @@ public class Hero {
    //hi
 	BufferedImage sprite;
 	String name;
-	int locationx;
-	int locationy;
+
 	int x;
 	int y;
-	Hero heropengu;
+	
 	public Hero(String name, String imageLocation, int locationx ,int locationy){
 		this.name = name;
 		int width= 100;
@@ -23,21 +26,14 @@ public class Hero {
 		x= locationx;
 		y=locationy;
 		
+	
 		
-		
-		
-		sprite = new BufferedImage (width,height,BufferedImage.TYPE_INT_ARGB);
-		
-	)
-		
-		
-		g2.drawImage()
-		
-		
-		URL url=getClass().getResource(imageLocation);
-		BufferedImage original =ImagesIO.read(url);
+		sprite = GraphicsUtilities.getScaledImageFromFile(this.getClass(),width,height,imageLocation);
+
 		
 	}
+		
+	
 	public BufferedImage getImage(){
 		return sprite;
 	}
@@ -46,23 +42,34 @@ public class Hero {
 	}
 	
 	public int getLocationx(){
-		return locationx;
+		return x;
 	}
 	
 	public int getLocationy(){
-		return locationy;
+		return y;
 	}
 
-	g.drawImage(herox.getImage()
 
-			
+	public void moveUp() {
+		y--;
+	}
 
-//	/**
-//	 * @param args
-//	 */
-//	public static void main(String[] args) {
-//		// TODO Auto-generated method stub
-//
-//	}
+
+	public void moveRight() {
+		x+=6;
+		
+	}
+
+
+	public void moveLeft() {
+		x--;
+	}
+
+
+	public void moveDown() {
+		y++;
+	}
+
+		
 
 }

@@ -20,7 +20,7 @@ public class MyWindow extends JFrame implements KeyListener{
 	int height = 500;
 	
 	
-	
+	Hero character;
 	
 	
 	
@@ -30,6 +30,9 @@ public class MyWindow extends JFrame implements KeyListener{
 
 	}
 	public MyWindow(){
+		character = new Hero("Hero","/Images/Heroes/pengion.png",200,200);
+		addKeyListener(this);//gives this JFrame the ability to recognize keyboard input
+		
 		setVisible(true);
 		setSize(width,height);
 		setLocation(200,150);
@@ -41,13 +44,6 @@ public class MyWindow extends JFrame implements KeyListener{
 		//Graphics 2d is like a art kit
 		
 		BufferedImage image= new BufferedImage(width,height,BufferedImage.TYPE_INT_ARGB);
-		
-		
-		
-
-
-
-
 		Graphics2D g2= (Graphics2D)image.getGraphics();
 		g2.setColor(Color.cyan);
 		g2.fillRect(0, 0, width,height);
@@ -72,19 +68,24 @@ public class MyWindow extends JFrame implements KeyListener{
 //			}	
 //
 //		}	
+		g2.drawImage(character.getImage(), character.getLocationx(), character.getLocationy(), null);
+		
+		//draw the bufferedImage on the canvas
 		g.drawImage(image,0,0,null);
 	}
 	public void keyPressed(KeyEvent arg0) {
 		int keyevent = arg0.getKeyCode();
-		if(keyevent == KeyEvent_VK_UP)
-			hero.moveUp();
+		if(keyevent == KeyEvent.VK_UP)
+			character.moveUp();
 		
-		if(keyevent == keyevent_Vk_RIGHT)		
-			x++
-		if(keyevent == keyevent_Vk_LEFT)	
-			x--
-		if(keyevent == keyevent_Vk_DOWN)	
-				x--	
+		if(keyevent == KeyEvent.VK_RIGHT)		
+			character.moveRight();
+		if(keyevent == KeyEvent.VK_LEFT)	
+			character.moveLeft();
+		if(keyevent == KeyEvent.VK_DOWN)	
+			character.moveDown();
+		
+		repaint();
 	}
 	public void keyReleased(KeyEvent arg0) {
 		// TODO Auto-generated method stub
