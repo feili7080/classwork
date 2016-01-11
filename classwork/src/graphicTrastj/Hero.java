@@ -5,6 +5,7 @@ import java.net.URL;
 
 public class Hero {
 	//comment
+	//new comment
 	BufferedImage sprite;
 	String name;
 	int locationx;
