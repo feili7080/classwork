@@ -7,6 +7,8 @@ public class Hero {
 	//comment
 	//new comment
 	// hello 
+	//today is nice
+
 	BufferedImage sprite;
 	String name;
 	int locationx;

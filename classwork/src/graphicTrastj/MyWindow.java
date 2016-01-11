@@ -12,6 +12,7 @@ import javax.swing.JFrame;
 
 public class MyWindow extends JFrame implements KeyListener{
 //comment
+	
 	/**
 	 * @param args
 	 */
