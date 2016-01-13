@@ -8,7 +8,7 @@ import java.net.URL;
 import javax.imageio.ImageIO;
 
 public class GraphicsUtilities {
-
+	//can u pull out i cant
 	//gets a scaled version of a image file
 	public static BufferedImage getScaledImageFromFile(Class c, int width, int height, String fileName){
 		BufferedImage sprite = new BufferedImage (width,height,BufferedImage.TYPE_INT_ARGB);
